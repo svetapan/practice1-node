@@ -1,0 +1,27 @@
+{
+  "name": "practice1-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svetapan/practice1-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svetapan/practice1-node/issues"
+  },
+  "homepage": "https://github.com/svetapan/practice1-node#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "joi": "^17.9.2",
+    "path": "^0.12.7",
+    "yargs": "^17.7.2"
+  }
+}
