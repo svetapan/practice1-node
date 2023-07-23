@@ -1,21 +1,39 @@
-const argv = require("yargs").argv;
-const { createFile } = require("./files");
+const express = require("express");
+const logger = require("morgan");
 
-function invokeAction({ action, fileName, content }) {
-  switch (action) {
-    case "create":
-      createFile(fileName, content);
-      break;
+const router = require("./router");
 
-    case "":
-      break;
+const app = express();
+app.use(logger("tiny"));
 
-    case "":
-      break;
+app.use(express.json());
 
-    default:
-      console.warn("\x1B[31m Unknown action type!");
-  }
-}
+app.use("/api/files", router);
 
-invokeAction(argv);
+app.listen(8000, () => {
+  console.log("App run on 8000 port");
+});
+
+// const argv = require("yargs").argv;
+// const { createFile, getFiles, getInfo } = require("./files");
+
+// function invokeAction({ action, fileName, content }) {
+//   switch (action) {
+//     case "create":
+//       createFile(fileName, content);
+//       break;
+
+//     case "get":
+//       getFiles();
+//       break;
+
+//     case "getInfo":
+//       getInfo(fileName);
+//       break;
+
+//     default:
+//       console.warn("\x1B[31m Unknown action type!");
+//   }
+// }
+
+// invokeAction(argv);
